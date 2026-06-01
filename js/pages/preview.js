@@ -19,9 +19,25 @@ export function criarPreview() {
     image.className = 'preview-image'
     image.src = './img/upload-icon.svg'
 
+    const buttonContainer = document.createElement('div')
+    buttonContainer.className = 'button-container'
+
+    const uploadButton = document.createElement('button')
+    uploadButton.className = 'button'
+    uploadButton.type = 'button'
+    uploadButton.id = 'upload-button'
+    uploadButton.textContent = 'salvar'
+
+    const cancelarButton = document.createElement('button')
+    cancelarButton.className = 'button'
+    cancelarButton.type = 'button'
+    cancelarButton.textContent = 'cancelar'
+
     previewContainer.append(input, label, image)
 
-    container.append(previewContainer)
+    buttonContainer.append(uploadButton, cancelarButton)
+
+    container.append(previewContainer, buttonContainer)
 
     return container
 }
